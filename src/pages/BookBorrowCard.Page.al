@@ -40,6 +40,7 @@ page 50204 "BookBorrowCard"
             {
                 ApplicationArea = All;
                 SubPageLink = "Order No." = field("No.");
+                UpdatePropagation = Both;
             }
         }
     }

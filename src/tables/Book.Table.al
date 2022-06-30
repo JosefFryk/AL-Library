@@ -33,7 +33,7 @@ table 50201 Book
 
     keys
     {
-        key(PK; "No.", Name, "No. Pages", ISBN)
+        key(PK; Name, ISBN, "No. Pages")
         {
             Clustered = true;
         }
