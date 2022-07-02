@@ -47,7 +47,7 @@ table 50202 Borrow
 
     keys
     {
-        key(PK; "No.")
+        key(PK; "No.", Name)
         {
             Clustered = true;
         }

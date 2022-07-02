@@ -44,5 +44,19 @@ page 50204 "BookBorrowCard"
             }
         }
     }
+    actions
+    {
+
+        area(Reporting)
+        {
+            action(BorrowCard)
+            {
+                ToolTip = 'Vypujcka';
+                ApplicationArea = All;
+                Caption = 'Create Reader Borrow Card';
+                RunObject = page ReaderBorrowCard;
+            }
+        }
+    }
 
 }
