@@ -3,6 +3,7 @@ page 50205 BookBorrowLines
     Caption = 'Lines';
     PageType = ListPart;
     SourceTable = BookLines;
+    //AutoSplitKey = pomaha automaticky doplnovat data do fields
     AutoSplitKey = true;
     RefreshOnActivate = true;
     DelayedInsert = true;
@@ -13,22 +14,23 @@ page 50205 BookBorrowLines
         {
             repeater(Lines)
             {
+                //Pro vice knih na jednu objednavku
                 field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Number';
+                    ToolTip = 'Cislo radku';
 
                 }
                 field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Name of Book';
+                    ToolTip = 'Jmeno knihy';
 
                 }
                 field(ISBN; Rec.ISBN)
                 {
                     ApplicationArea = All;
-                    ToolTip = 'ID';
+                    ToolTip = 'International Standard Book Number';
                 }
                 field("No. Pages"; Rec."No. Pages")
                 {
