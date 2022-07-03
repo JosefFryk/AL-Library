@@ -3,21 +3,25 @@ query 50200 Join
     QueryType = Normal;
 
 
+
     elements
     {
         dataitem(Reader; Reader)
 
 
         {
+            column(ReaderId; "No.")
+            {
 
+            }
             column(ReaderName; Name)
             {
 
             }
+
             dataitem(BookTable; Borrow)
             {
-                DataItemLink = "Name" = Reader."Name";
-                SqlJoinType = LeftOuterJoin;
+                DataItemLink = "Name" = Reader.Name;
                 column(BorrowDate; BorrowDate)
                 {
 

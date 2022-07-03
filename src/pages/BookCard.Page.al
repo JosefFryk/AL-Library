@@ -1,6 +1,6 @@
 page 50202 BookCard
 {
-    Caption = 'Caption';
+    Caption = 'Book Card';
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;

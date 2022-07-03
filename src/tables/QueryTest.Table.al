@@ -21,13 +21,30 @@ table 50207 QueryTest
             Caption = 'Book Name';
             DataClassification = ToBeClassified;
         }
+        field(4; "RowNo."; Integer)
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'RowNo.';
+        }
+        field(5; "BorrowDate"; Date)
+        {
+            Caption = 'Borrow Date';
+            DataClassification = ToBeClassified;
+        }
+        field(6; ReaderId; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Reader ID';
+        }
+
+
 
 
     }
 
     keys
     {
-        key(PK; "ReaderName")
+        key(PK; "ReaderName", "RowNo.")
         {
             Clustered = true;
         }

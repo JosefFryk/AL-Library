@@ -17,6 +17,18 @@ page 50208 QueryTest
 
             repeater(content1)
             {
+                // field("RowNo."; Rec."RowNo.")
+                // {
+                //     ApplicationArea = All;
+                //     ToolTip = 'Cislo radku';
+                // }
+                field(ReaderId; Rec.ReaderId)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Reader ID';
+                }
+
+
                 field(ReaderName; Rec.ReaderName)
                 {
                     ApplicationArea = All;
@@ -35,6 +47,12 @@ page 50208 QueryTest
                     ApplicationArea = All;
                     ToolTip = 'Borrow ID';
                 }
+                field(BorrowDate; Rec.BorrowDate)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Borrow date';
+                }
+
 
             }
         }
@@ -46,9 +64,12 @@ page 50208 QueryTest
         Join.Open();
         while Join.Read() do begin
             Rec.Init();
+            Rec."RowNo." := Rec."RowNo." + 1;
+            Rec.ReaderId := Join.ReaderId;
             Rec.ReaderName := Join.ReaderName;
             Rec.BookName := Join.BookName;
             Rec.BorrowID := Join.BorrowID;
+            Rec.BorrowDate := Join.BorrowDate;
             Rec.Insert()
 
         end;
