@@ -56,7 +56,7 @@ page 50204 "BookBorrowCard"
                 ToolTip = 'Vypujcka';
                 ApplicationArea = All;
                 Caption = 'All Borrow Cards';
-                RunObject = page QueryTest;
+                RunObject = page AllReadersBorrows;
                 Promoted = true;
                 PromotedIsBig = true;
             }

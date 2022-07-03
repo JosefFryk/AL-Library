@@ -1,4 +1,4 @@
-page 50208 QueryTest
+page 50208 AllReadersBorrows
 {
     PageType = List;
     ApplicationArea = All;
