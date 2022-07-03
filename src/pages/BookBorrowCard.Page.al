@@ -5,7 +5,7 @@ page 50204 "BookBorrowCard"
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = Borrow;
-    //page id 42
+    //page id 42 vzor
     layout
     {
         area(Content)
@@ -16,26 +16,27 @@ page 50204 "BookBorrowCard"
                 field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Number of borrow';
+                    ToolTip = 'Cislo Vypujcky';
                 }
 
                 field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
                     Caption = 'Reader Name';
-                    ToolTip = 'Name of Reader';
+                    ToolTip = 'Jmeno Ctenare';
                 }
                 field(BorrowDate; Rec.BorrowDate)
                 {
                     ApplicationArea = All;
                     Caption = 'Borrow Date';
-                    ToolTip = 'Date';
+                    ToolTip = 'Datum vypujceni';
                 }
 
 
 
 
             }
+            //tabulka pro vyber knih
             part(Lines; BookBorrowLines)
             {
                 ApplicationArea = All;
@@ -49,12 +50,15 @@ page 50204 "BookBorrowCard"
 
         area(Reporting)
         {
+            //prechod na query list
             action(BorrowCard)
             {
                 ToolTip = 'Vypujcka';
                 ApplicationArea = All;
-                Caption = 'Create Reader Borrow Card';
-                RunObject = page ReaderBorrowCard;
+                Caption = 'All Borrow Cards';
+                RunObject = page QueryTest;
+                Promoted = true;
+                PromotedIsBig = true;
             }
         }
     }

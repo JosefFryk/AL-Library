@@ -17,6 +17,7 @@ page 50208 QueryTest
 
             repeater(content1)
             {
+
                 // field("RowNo."; Rec."RowNo.")
                 // {
                 //     ApplicationArea = All;
@@ -25,38 +26,39 @@ page 50208 QueryTest
                 field(ReaderId; Rec.ReaderId)
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Reader ID';
+                    ToolTip = 'ID ctenare';
                 }
 
 
                 field(ReaderName; Rec.ReaderName)
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Reader name';
+                    ToolTip = 'Jmeno ctenare';
 
                 }
 
                 field(BookName; Rec.BookName)
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Reader name';
+                    ToolTip = 'Jmeno knihy';
 
                 }
                 field(BorrowID; Rec.BorrowID)
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Borrow ID';
+                    ToolTip = 'ID vypujcky';
                 }
                 field(BorrowDate; Rec.BorrowDate)
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Borrow date';
+                    ToolTip = 'Datum vypujcky';
                 }
 
 
             }
         }
     }
+    //prenos dat z query.al 
     trigger OnOpenPage()
     var
         Join: Query Join;
@@ -64,6 +66,7 @@ page 50208 QueryTest
         Join.Open();
         while Join.Read() do begin
             Rec.Init();
+            //pridani +1 k cislu radku, kvuli duplicite jmen readerName
             Rec."RowNo." := Rec."RowNo." + 1;
             Rec.ReaderId := Join.ReaderId;
             Rec.ReaderName := Join.ReaderName;

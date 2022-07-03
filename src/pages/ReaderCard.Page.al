@@ -11,6 +11,7 @@ page 50200 ReaderCard
     {
         area(Content)
         {
+
             group(Main)
             {
                 field(Name; Rec.Name)
