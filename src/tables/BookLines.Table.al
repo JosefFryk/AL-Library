@@ -35,7 +35,6 @@ table 50203 BookLines
         }
         field(6; "No. Pages"; Integer)
         {
-            //link na name
             FieldClass = FlowField;
             CalcFormula = lookup(Book."No. Pages" where(Name = field(Name)));
         }
